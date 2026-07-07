@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>실행 로드맵 | Cloud Native ISMS-P Guide</title>
+  <meta name="description" content="클라우드 네이티브 ISMS-P 기준 아키텍처와 단계별 실행 로드맵">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar" aria-label="상단 내비게이션">
+      <a class="brand" href="index.html" aria-label="Cloud Native ISMS-P Guide 홈">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Cloud Native ISMS-P Guide</span>
+      </a>
+      <nav class="nav" aria-label="주요 페이지">
+        <a href="index.html">소개</a>
+        <a href="readiness.html">준비 기준</a>
+        <a href="solutions.html">솔루션 맵</a>
+        <a href="datadog.html">Datadog</a>
+        <a href="roadmap.html" aria-current="page">실행 로드맵</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-hero" aria-labelledby="roadmap-title">
+      <div class="container">
+        <p class="kicker">실행 로드맵</p>
+        <h1 id="roadmap-title">기준 아키텍처의 출발점은 탐지가 아니라 증명 가능한 흐름입니다.</h1>
+        <p>클라우드 네이티브 ISMS-P의 핵심은 클라우드 이벤트, 개인정보 흐름, 조치 이력을 같은 증적 체계로 묶는 일입니다.</p>
+      </div>
+    </section>
+
+    <section class="architecture" aria-labelledby="architecture-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">기준 아키텍처</p>
+            <h2 id="architecture-title">AWS 기본 통제 → Evidence Lake → SIEM/GRC/티켓</h2>
+          </div>
+          <p class="section-copy">
+            제품명보다 증명 경로가 먼저입니다. 원본 이벤트를 모으고, 바꾸기 어렵게 보관한 뒤 조치 이력으로 연결합니다.
+          </p>
+        </div>
+
+        <div class="architecture-flow" aria-label="기준 아키텍처 데이터 흐름">
+          <article class="flow-node baseline">
+            <span class="node-label">AWS 기본 통제</span>
+            <h3>먼저 활성화할 기본 통제</h3>
+            <p>AWS 계정과 워크로드에서 원본 이벤트를 안정적으로 모읍니다.</p>
+            <div class="chip-grid">
+              <span class="chip">Organizations</span>
+              <span class="chip">IAM Identity Center</span>
+              <span class="chip">CloudTrail</span>
+              <span class="chip">Config</span>
+              <span class="chip">Security Hub</span>
+              <span class="chip">GuardDuty</span>
+              <span class="chip">Inspector</span>
+              <span class="chip">Macie</span>
+              <span class="chip">KMS</span>
+              <span class="chip">Secrets Manager</span>
+              <span class="chip">Backup</span>
+              <span class="chip">WAF</span>
+              <span class="chip">Systems Manager</span>
+              <span class="chip">EKS/ECS 로그</span>
+            </div>
+          </article>
+
+          <article class="flow-node lake">
+            <span class="node-label">Evidence Lake</span>
+            <h3>원본 증적을 바꾸기 어렵게 보관</h3>
+            <p>Log Archive/Evidence 계정의 S3에 중앙 보관하고 보존 정책을 태그로 관리합니다.</p>
+            <div class="tag-list">
+              <div class="tag-row"><b>Storage</b><span>S3 Object Lock, Public Access Block</span></div>
+              <div class="tag-row"><b>Crypto</b><span>SSE-KMS, 엄격한 bucket policy</span></div>
+              <div class="tag-row"><b>Tags</b><span>control, system, account, region, period, owner, retention</span></div>
+            </div>
+          </article>
+
+          <article class="flow-node ops">
+            <span class="node-label">SIEM / GRC / 티켓</span>
+            <h3>탐지와 조치 이력을 연결</h3>
+            <p>탐지 결과가 담당자, 승인, 예외, 재검증 기록으로 이어져야 심사 설명이 쉬워집니다.</p>
+            <div class="chip-grid">
+              <span class="chip">SIEM 탐지</span>
+              <span class="chip">GRC 통제</span>
+              <span class="chip">티켓 조치</span>
+              <span class="chip">위험수용</span>
+              <span class="chip">승인/예외</span>
+              <span class="chip">심사 패키지</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap" aria-labelledby="phases-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">단계별 실행</p>
+            <h2 id="phases-title">실행 순서는 제품 구매가 아니라 증적 공백을 줄이는 방향이어야 합니다.</h2>
+          </div>
+          <p class="section-copy">
+            처음부터 모든 솔루션을 구매하면 범위가 더 복잡해질 수 있습니다. P0 기반선, 자동화, 심사 패키징 순서로 진행합니다.
+          </p>
+        </div>
+
+        <div class="roadmap-grid">
+          <article class="roadmap-card">
+            <h3>0단계: 인증범위 고정</h3>
+            <p>심사 대상 서비스와 개인정보 처리 시스템을 먼저 확정합니다.</p>
+            <ul>
+              <li>AWS 계정, 리전, VPC, 클러스터 목록</li>
+              <li>SaaS, 수탁사, 원격근무 경계</li>
+              <li>개인정보 흐름과 보유 기간</li>
+            </ul>
+          </article>
+          <article class="roadmap-card">
+            <h3>1단계: P0 증적 기반선</h3>
+            <p>접근통제, 로그, 취약점, 백업 증적을 먼저 연결합니다.</p>
+            <ul>
+              <li>CloudTrail, EKS/ECS, DB 감사 로그</li>
+              <li>Evidence Lake와 Object Lock</li>
+              <li>퇴사자·직무변경자 권한 회수</li>
+            </ul>
+          </article>
+          <article class="roadmap-card">
+            <h3>2단계: 운영 워크플로 자동화</h3>
+            <p>탐지 결과가 조치, 승인, 재검증으로 이어지게 만듭니다.</p>
+            <ul>
+              <li>SIEM finding → 담당자 티켓</li>
+              <li>취약점 조치 SLA와 예외 승인</li>
+              <li>CI/CD 변경관리와 배포 이력</li>
+            </ul>
+          </article>
+          <article class="roadmap-card">
+            <h3>3단계: 심사 패키징과 고도화</h3>
+            <p>반복 질문에 바로 답할 수 있는 증적 묶음을 만듭니다.</p>
+            <ul>
+              <li>통제 항목별 증적 링크</li>
+              <li>사고대응·백업복구 리허설</li>
+              <li>개인정보 파기 검증 리포트</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="roadmap-final-title">
+      <div class="container cta-panel">
+        <div>
+          <p class="eyebrow">운영 흐름 닫기</p>
+          <h2 id="roadmap-final-title">아키텍처와 로드맵은 심사 설명을 짧게 만들기 위한 운영 설계입니다.</h2>
+          <p>범위, 원본 로그, 탐지, 조치, 예외, 재검증이 이어지면 심사 대응은 문서 작업보다 운영 결과 확인에 가까워집니다.</p>
+        </div>
+        <a class="button primary" href="readiness.html">준비 기준 다시 보기 <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Cloud Native ISMS-P Guide</span>
+      <span>문서 기준일: 2026-07-08 · 소개용 자료</span>
+    </div>
+  </footer>
+</body>
+</html>

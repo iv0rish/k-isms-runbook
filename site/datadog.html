@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datadog | Cloud Native ISMS-P Guide</title>
+  <meta name="description" content="Datadog을 클라우드 네이티브 ISMS-P 운영을 위한 all-in-one 모니터링 플랫폼으로 설명합니다.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar" aria-label="상단 내비게이션">
+      <a class="brand" href="index.html" aria-label="Cloud Native ISMS-P Guide 홈">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Cloud Native ISMS-P Guide</span>
+      </a>
+      <nav class="nav" aria-label="주요 페이지">
+        <a href="index.html">소개</a>
+        <a href="readiness.html">준비 기준</a>
+        <a href="solutions.html">솔루션 맵</a>
+        <a href="datadog.html" aria-current="page">Datadog</a>
+        <a href="roadmap.html">실행 로드맵</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero datadog-hero" aria-labelledby="datadog-title">
+      <div class="container hero-stage">
+        <div class="hero-copy">
+          <p class="kicker">all-in-one 모니터링 플랫폼</p>
+          <h1 id="datadog-title">Datadog은 클라우드 네이티브 ISMS-P 운영 신호를 한곳에 모읍니다.</h1>
+          <p class="hero-lede">
+            인프라, 애플리케이션, 로그, 보안 이벤트, 사용자 경험, CI/CD, 사고 대응 흐름을 하나의 통합 모니터링 화면에서 확인합니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#capabilities">역량 그룹 보기 <span class="arrow">→</span></a>
+            <a class="button secondary" href="#isms-framing">ISMS-P 관점 보기 <span class="arrow">→</span></a>
+          </div>
+          <div class="hero-tags" aria-label="Datadog 핵심 범위">
+            <a href="https://www.datadoghq.com/product/apm/" target="_blank" rel="noopener noreferrer">APM</a>
+            <a href="https://www.datadoghq.com/product/infrastructure-monitoring/" target="_blank" rel="noopener noreferrer">Infrastructure</a>
+            <a href="https://www.datadoghq.com/product/log-management/" target="_blank" rel="noopener noreferrer">Logs</a>
+            <a href="https://www.datadoghq.com/product/cloud-siem/" target="_blank" rel="noopener noreferrer">Cloud SIEM</a>
+            <a href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">Cloud Security</a>
+            <a href="https://www.datadoghq.com/product/ci-cd-monitoring/" target="_blank" rel="noopener noreferrer">CI Visibility</a>
+          </div>
+        </div>
+
+        <div class="dashboard-shell" aria-label="Datadog 통합 모니터링 콘솔 예시">
+          <div class="window-head">
+            <span>integrated-ops / isms-p-readiness</span>
+            <span class="window-dots"><span></span><span></span><span></span></span>
+          </div>
+          <div class="dashboard-grid">
+            <article class="dash-panel">
+              <h3>Service health</h3>
+              <p><a class="inline-service-link" href="https://www.datadoghq.com/product/apm/" target="_blank" rel="noopener noreferrer">APM</a> · <a class="inline-service-link" href="https://www.datadoghq.com/product/infrastructure-monitoring/" target="_blank" rel="noopener noreferrer">Infrastructure</a> · <a class="inline-service-link" href="https://www.datadoghq.com/product/kubernetes-monitoring/" target="_blank" rel="noopener noreferrer">Kubernetes</a></p>
+              <div class="metric-bars">
+                <span style="--w: 86%; --c: var(--accent);"></span>
+                <span style="--w: 68%; --c: var(--signal);"></span>
+                <span style="--w: 54%; --c: var(--purple);"></span>
+              </div>
+            </article>
+            <article class="dash-panel">
+              <h3>Security signals</h3>
+              <p><a class="inline-service-link" href="https://www.datadoghq.com/product/cloud-siem/" target="_blank" rel="noopener noreferrer">Cloud SIEM</a> · <a class="inline-service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">CSPM</a> · <a class="inline-service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">CIEM</a></p>
+              <div class="metric-bars">
+                <span style="--w: 74%; --c: var(--purple);"></span>
+                <span style="--w: 48%; --c: var(--danger);"></span>
+                <span style="--w: 63%; --c: var(--accent);"></span>
+              </div>
+            </article>
+            <article class="dash-panel wide">
+              <h3>Unified signal stream</h3>
+              <small>logs, traces, metrics, findings, deployments, incidents</small>
+              <div class="signal-strip">
+                <a class="signal-pill" href="https://www.datadoghq.com/product/apm/" target="_blank" rel="noopener noreferrer">APM latency</a>
+                <a class="signal-pill" href="https://www.datadoghq.com/product/infrastructure-monitoring/" target="_blank" rel="noopener noreferrer">Infrastructure CPU</a>
+                <a class="signal-pill" href="https://www.datadoghq.com/product/log-management/" target="_blank" rel="noopener noreferrer">Logs anomaly</a>
+                <a class="signal-pill" href="https://www.datadoghq.com/product/cloud-siem/" target="_blank" rel="noopener noreferrer">Cloud SIEM rule</a>
+                <a class="signal-pill" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">Cloud Security posture</a>
+                <a class="signal-pill" href="https://www.datadoghq.com/product/ci-cd-monitoring/" target="_blank" rel="noopener noreferrer">CI Visibility deploy</a>
+                <a class="signal-pill" href="https://www.datadoghq.com/product/real-user-monitoring/" target="_blank" rel="noopener noreferrer">RUM/Synthetics</a>
+                <a class="signal-pill" href="https://www.datadoghq.com/product/service-level-objectives/" target="_blank" rel="noopener noreferrer">SLO/Incident</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" aria-labelledby="capability-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">플랫폼 구성</p>
+            <h2 id="capability-title">모니터링, 보안, 증적, 사고 대응, 사용자 경험을 하나의 운영 화면으로 묶습니다.</h2>
+          </div>
+          <div class="section-intro">
+            <p class="section-copy">
+              Datadog은 단일 모니터링 도구에 머물지 않고, 클라우드 네이티브 운영 신호를 연결하는 통합 플랫폼에 가깝습니다.
+            </p>
+            <p class="link-hint">서비스명을 선택하면 해당 Datadog 제품 페이지가 새 창으로 열립니다.</p>
+          </div>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card">
+            <span class="card-label">Observability Core</span>
+            <h3>서비스와 인프라 상태</h3>
+            <ul>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/infrastructure-monitoring/" target="_blank" rel="noopener noreferrer">Infrastructure Monitoring</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/apm/" target="_blank" rel="noopener noreferrer">APM</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/log-management/" target="_blank" rel="noopener noreferrer">Log Management</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/network-monitoring/" target="_blank" rel="noopener noreferrer">Network Monitoring</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/container-monitoring/" target="_blank" rel="noopener noreferrer">Container/Kubernetes</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/serverless-monitoring/" target="_blank" rel="noopener noreferrer">Serverless</a></li>
+            </ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-label">Security Operations</span>
+            <h3>클라우드 보안 운영</h3>
+            <ul>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">Cloud Security</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/cloud-siem/" target="_blank" rel="noopener noreferrer">Cloud SIEM</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">Vulnerability Management</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">CSPM</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">CIEM</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">Workload Protection</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">App and API Protection</a></li>
+            </ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-label">Evidence & Governance</span>
+            <h3>증적 운영 보조</h3>
+            <ul>
+              <li><a class="service-link" href="https://docs.datadoghq.com/account_management/audit_trail/" target="_blank" rel="noopener noreferrer">Audit Trail</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/dashboards/" target="_blank" rel="noopener noreferrer">Dashboards</a></li>
+              <li><a class="service-link" href="https://docs.datadoghq.com/monitors/" target="_blank" rel="noopener noreferrer">Alerts</a></li>
+              <li><a class="service-link" href="https://docs.datadoghq.com/account_management/rbac/" target="_blank" rel="noopener noreferrer">Access Control</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/sensitive-data-scanner/" target="_blank" rel="noopener noreferrer">Sensitive Data Scanner</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/observability-pipelines/" target="_blank" rel="noopener noreferrer">Observability Pipelines</a></li>
+            </ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-label">Incident Readiness</span>
+            <h3>사고 대응 준비</h3>
+            <ul>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/incident-management/" target="_blank" rel="noopener noreferrer">Incident Response</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/case-management/" target="_blank" rel="noopener noreferrer">Case Management</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/workflow-automation/" target="_blank" rel="noopener noreferrer">Workflow Automation</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/service-level-objectives/" target="_blank" rel="noopener noreferrer">SLO</a></li>
+            </ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-label">Digital Experience & Delivery</span>
+            <h3>사용자 경험과 배포</h3>
+            <ul>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/real-user-monitoring/" target="_blank" rel="noopener noreferrer">RUM</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/synthetic-monitoring/" target="_blank" rel="noopener noreferrer">Synthetic Monitoring</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/error-tracking/" target="_blank" rel="noopener noreferrer">Error Tracking</a></li>
+              <li><a class="service-link" href="https://www.datadoghq.com/product/ci-cd-monitoring/" target="_blank" rel="noopener noreferrer">CI Visibility</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="isms-framing" class="note-band" aria-labelledby="isms-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">ISMS-P 관점</p>
+            <h2 id="isms-title">Datadog은 ISMS-P 준비 수준을 높이고 심사 증적 운영을 돕습니다.</h2>
+          </div>
+          <p class="section-copy">
+            핵심은 인증 보장이 아니라 운영 가시성 확보입니다. 통제별 원본 증적과 내부 승인 절차는 별도로 설계해야 합니다.
+          </p>
+        </div>
+
+        <div class="isms-grid">
+          <article class="isms-card">
+            <span class="card-label">관리체계/위험관리</span>
+            <h3>위험 대시보드와 리뷰 지표</h3>
+            <p>위험 대시보드, SLO, 소유자, 정기 검토 지표로 운영 현황을 점검합니다.</p>
+          </article>
+          <article class="isms-card">
+            <span class="card-label">자산/운영관리</span>
+            <h3>클라우드 자산과 서비스 토폴로지</h3>
+            <p>클라우드 계정, 호스트, 컨테이너, Kubernetes 리소스, 서비스 토폴로지를 연결합니다.</p>
+          </article>
+          <article class="isms-card">
+            <span class="card-label">권한/접근통제 보조</span>
+            <h3>권한과 이상 접근 분석</h3>
+            <p>CIEM, 네트워크·서비스 트래픽, 이상 접근 이벤트 분석으로 접근통제 검토를 보조합니다.</p>
+          </article>
+          <article class="isms-card">
+            <span class="card-label">시스템/서비스 보안관리</span>
+            <h3>취약점과 클라우드 보안 자세</h3>
+            <p>취약점, 설정 오류, 클라우드 보안 자세를 서비스 영향과 함께 봅니다.</p>
+          </article>
+          <article class="isms-card">
+            <span class="card-label">사고 예방/대응</span>
+            <h3>탐지, 알림, 케이스, 워크플로</h3>
+            <p>Cloud SIEM, 탐지 룰, 알림, 케이스, 대응 워크플로를 하나의 대응 흐름으로 묶습니다.</p>
+          </article>
+          <article class="isms-card">
+            <span class="card-label">개인정보 보호조치 보조</span>
+            <h3>민감정보 스캔과 로그 통제</h3>
+            <p>민감정보 스캔, 로그 라우팅·마스킹, 보존 정책, 접근통제 보조 기능을 함께 검토합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="caveat" aria-labelledby="caveat-title">
+      <div class="container">
+        <div class="note-panel">
+          <div>
+            <p class="eyebrow">주의</p>
+            <strong id="caveat-title">Datadog은 ISMS-P 인증을 보장하지 않습니다.</strong>
+            <p>정책, 절차, 인력, 개인정보 거버넌스, 수탁사 관리, 법적 요구사항, 원본 증적 보존은 별도 운영 체계가 필요합니다. 외부 설명에는 “ISMS-P 준비 수준 강화”, “심사 증적 운영 지원”, “클라우드 보안 운영 가시성 확보” 정도가 적절합니다.</p>
+          </div>
+          <div>
+            <p class="eyebrow">데이터 처리</p>
+            <p>로그와 텔레메트리에는 개인정보나 민감정보가 포함될 수 있습니다. 수집 범위, 마스킹, 보존 기간, 접근통제, 국외 이전과 처리위탁 요건을 사전에 검토해야 합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="datadog-final-title">
+      <div class="container cta-panel">
+        <div>
+          <p class="eyebrow">다음 아키텍처</p>
+          <h2 id="datadog-final-title">Datadog 신호는 Evidence Lake와 티켓 흐름에 연결될 때 심사 설명력이 높아집니다.</h2>
+          <p>모니터링 화면과 별개로 원본 보존, 승인, 예외, 재검증 이력을 운영 흐름에 남겨야 합니다.</p>
+        </div>
+        <a class="button primary" href="roadmap.html">실행 로드맵 보기 <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Cloud Native ISMS-P Guide</span>
+      <span>문서 기준일: 2026-07-08 · 소개용 자료</span>
+    </div>
+  </footer>
+</body>
+</html>

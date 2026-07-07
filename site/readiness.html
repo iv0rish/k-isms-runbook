@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISMS-P 준비 | Cloud Native ISMS-P Guide</title>
+  <meta name="description" content="클라우드 네이티브 환경에서 ISMS-P 기준 구조와 심사 전 P0 리스크를 설명합니다.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar" aria-label="상단 내비게이션">
+      <a class="brand" href="index.html" aria-label="Cloud Native ISMS-P Guide 홈">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Cloud Native ISMS-P Guide</span>
+      </a>
+      <nav class="nav" aria-label="주요 페이지">
+        <a href="index.html">소개</a>
+        <a href="readiness.html" aria-current="page">준비 기준</a>
+        <a href="solutions.html">솔루션 맵</a>
+        <a href="datadog.html">Datadog</a>
+        <a href="roadmap.html">실행 로드맵</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-hero" aria-labelledby="readiness-title">
+      <div class="container">
+        <p class="kicker">클라우드 네이티브 준비 기준</p>
+        <h1 id="readiness-title">클라우드 네이티브 ISMS-P 준비는 범위와 증적 기준을 먼저 맞추는 일입니다.</h1>
+        <p>AWS, EKS/ECS, SaaS, CI/CD, 개인정보 처리 시스템이 섞인 환경에서는 심사자가 묻는 기준과 실제 운영 데이터가 쉽게 어긋납니다.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="structure-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">KISA 기준 구조</p>
+            <h2 id="structure-title">ISMS-P 요구사항은 16/64/21 구조로 나뉩니다.</h2>
+          </div>
+          <p class="section-copy">
+            항목 수를 외우는 것보다 인증범위, 개인정보 흐름, 원본 증적의 기준을 같은 언어로 설명하는 일이 더 중요합니다.
+          </p>
+        </div>
+
+        <div class="criteria-strip" aria-label="ISMS-P 기준 구성">
+          <div class="criteria"><strong>16</strong><span>관리체계 수립 및 운영</span></div>
+          <div class="criteria"><strong>64</strong><span>보호대책 요구사항</span></div>
+          <div class="criteria"><strong>21</strong><span>개인정보 처리단계별 요구사항</span></div>
+        </div>
+
+        <div class="principle-grid">
+          <article class="principle-card">
+            <span class="card-label">scope</span>
+            <h3>인증범위</h3>
+            <p>서비스, AWS 계정, 리전, VPC, EKS/ECS, DB, SaaS, 수탁사 경계를 먼저 고정합니다.</p>
+          </article>
+          <article class="principle-card">
+            <span class="card-label">evidence</span>
+            <h3>원본 증적</h3>
+            <p>정책 문서만으로는 부족합니다. 로그, 승인, 티켓, 배포, 백업 실행 이력이 함께 필요합니다.</p>
+          </article>
+          <article class="principle-card">
+            <span class="card-label">privacy</span>
+            <h3>개인정보 흐름</h3>
+            <p>수집, 이용, 보관, 제공, 파기 흐름이 코드와 데이터 저장소 변경에 맞춰 갱신되어야 합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="note-band" aria-labelledby="hard-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">어려운 이유</p>
+            <h2 id="hard-title">클라우드 네이티브 환경에서는 심사 질문과 운영 현실이 쉽게 어긋납니다.</h2>
+          </div>
+          <p class="section-copy">
+            리소스와 권한, 로그, 개인정보 흐름이 계속 바뀌기 때문에 한 번 만든 표만으로는 설명이 어렵습니다.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem">
+            <div class="problem-icon">01</div>
+            <h3>동적 AWS 리소스</h3>
+            <p>계정, 리전, VPC, EKS 클러스터, 데이터 저장소가 계속 생기고 사라집니다.</p>
+          </article>
+          <article class="problem">
+            <div class="problem-icon">02</div>
+            <h3>흩어진 권한</h3>
+            <p>IAM, SSO, EKS RBAC, DB 권한, SaaS 권한을 같은 사람 기준으로 봐야 합니다.</p>
+          </article>
+          <article class="problem">
+            <div class="problem-icon">03</div>
+            <h3>분산된 로그</h3>
+            <p>CloudTrail, EKS audit, 애플리케이션 로그, DB 감사 로그가 사건 흐름으로 이어져야 합니다.</p>
+          </article>
+          <article class="problem">
+            <div class="problem-icon">04</div>
+            <h3>코드와 묶인 개인정보 증적</h3>
+            <p>개인정보 수집 목적, 처리 위치, 보유 기간, 파기 내역이 서비스 변경과 함께 추적되어야 합니다.</p>
+          </article>
+          <article class="problem">
+            <div class="problem-icon">05</div>
+            <h3>외부 SaaS와 원격근무</h3>
+            <p>SaaS, 수탁사, 단말, 원격 접속 경계가 넓어지면 제품명보다 책임 경계가 먼저 필요합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="risk-section" aria-labelledby="risks-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">P0 심사 리스크</p>
+            <h2 id="risks-title">심사 전에 반드시 닫아야 할 P0 리스크입니다.</h2>
+          </div>
+          <p class="section-copy">
+            P0는 제품 도입 여부와 관계없이 먼저 증명해야 하는 항목입니다. 이 공백은 준비 단계에서 집중해서 확인합니다.
+          </p>
+        </div>
+
+        <div class="risk-grid">
+          <article class="risk-card">
+            <div class="risk-number">P0</div>
+            <h3>인증범위·자산·개인정보 흐름 누락</h3>
+            <p>서비스, 계정, 데이터 저장소, 외부 연동이 목록과 다르면 이후 증적도 흔들립니다.</p>
+            <span class="p0-label">scope gap</span>
+          </article>
+          <article class="risk-card">
+            <div class="risk-number">P0</div>
+            <h3>퇴사자/직무변경자 접근권한 잔존</h3>
+            <p>SSO, IAM, DB, 쿠버네티스 권한 회수 내역을 사람 기준으로 보여줘야 합니다.</p>
+            <span class="p0-label">access review</span>
+          </article>
+          <article class="risk-card">
+            <div class="risk-number">P0</div>
+            <h3>운영망과 개인정보처리시스템 접근 경로 불명확</h3>
+            <p>누가 어떤 경로로 운영 시스템에 접속하는지 세션과 승인 흐름이 필요합니다.</p>
+            <span class="p0-label">admin path</span>
+          </article>
+          <article class="risk-card">
+            <div class="risk-number">P0</div>
+            <h3>로그 수집·보존·무결성 부족</h3>
+            <p>탐지 로그와 별도로 원본 로그의 보존 기간, 변경 불가, 암호화가 설명되어야 합니다.</p>
+            <span class="p0-label">log integrity</span>
+          </article>
+          <article class="risk-card">
+            <div class="risk-number">P0</div>
+            <h3>취약점 진단과 조치 추적 미흡</h3>
+            <p>스캔 결과보다 더 중요한 것은 담당자, 조치 기한, 재검증 내역입니다.</p>
+            <span class="p0-label">remediation</span>
+          </article>
+          <article class="risk-card">
+            <div class="risk-number">P0</div>
+            <h3>파기 자동화와 증적 부재</h3>
+            <p>보유 기간이 지난 개인정보가 실제로 삭제됐는지 시스템 로그로 남겨야 합니다.</p>
+            <span class="p0-label">retention</span>
+          </article>
+          <article class="risk-card">
+            <div class="risk-number">P0</div>
+            <h3>사고대응/백업복구 증적 부족</h3>
+            <p>훈련, 보고, 백업, 복구 테스트가 문서가 아니라 실행 이력으로 남아야 합니다.</p>
+            <span class="p0-label">response</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="readiness-final-title">
+      <div class="container cta-panel">
+        <div>
+          <p class="eyebrow">Next</p>
+          <h2 id="readiness-final-title">P0 공백이 보이면 솔루션 맵이 선택 기준으로 작동합니다.</h2>
+          <p>제품명을 먼저 나열하기보다 닫아야 할 접근통제, 로그, 취약점, 개인정보 증적 공백부터 연결합니다.</p>
+        </div>
+        <a class="button primary" href="solutions.html">솔루션 맵 보기 <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Cloud Native ISMS-P Guide</span>
+      <span>문서 기준일: 2026-07-08 · 소개용 자료</span>
+    </div>
+  </footer>
+</body>
+</html>
