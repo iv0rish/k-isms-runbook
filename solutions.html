@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>솔루션 맵 | Cloud Native ISMS-P Guide</title>
+  <meta name="description" content="클라우드 네이티브 ISMS-P 준비를 위한 접근제어, SIEM, CSPM, SASE, EDR, MDM, 코드 보안 솔루션 맵">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar" aria-label="상단 내비게이션">
+      <a class="brand" href="index.html" aria-label="Cloud Native ISMS-P Guide 홈">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Cloud Native ISMS-P Guide</span>
+      </a>
+      <nav class="nav" aria-label="주요 페이지">
+        <a href="index.html">소개</a>
+        <a href="readiness.html">준비 기준</a>
+        <a href="solutions.html" aria-current="page">솔루션 맵</a>
+        <a href="datadog.html">Datadog</a>
+        <a href="roadmap.html">실행 로드맵</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-hero" aria-labelledby="solutions-title">
+      <div class="container">
+        <p class="kicker">솔루션 맵</p>
+        <h1 id="solutions-title">솔루션은 제품명이 아니라 닫아야 할 증적 공백을 기준으로 고릅니다.</h1>
+        <p>처음 보는 제품도 역할을 파악할 수 있도록 접근통제, 모니터링, 보안, 단말, 배포 범주로 나눴습니다.</p>
+      </div>
+    </section>
+
+    <section class="solution-section" aria-labelledby="map-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">범주</p>
+            <h2 id="map-title">범주별 역할과 후보 제품을 한눈에 봅니다.</h2>
+          </div>
+          <div class="section-intro">
+            <p class="section-copy">
+              한 제품이 모든 ISMS-P 요구사항을 대신하지는 않습니다. 각 범주는 접근, 탐지, 자산, 취약점, 단말, 업무 SaaS 증적의 빈 곳을 채웁니다.
+            </p>
+            <p class="link-hint">제품명을 선택하면 공식 서비스 페이지가 새 창으로 열립니다.</p>
+          </div>
+        </div>
+
+        <div class="solution-map">
+          <article class="solution-item">
+            <div><h3>서버 접근제어</h3><p>운영 서버 접속, 세션, 명령 이력</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.querypie.com/en/solutions/acp" target="_blank" rel="noopener noreferrer">QueryPie ACP</a><a class="product-chip" href="https://goteleport.com/docs/" target="_blank" rel="noopener noreferrer">Teleport</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>DB 접근제어</h3><p>개인정보 DB 접속 승인과 쿼리 감사</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.querypie.com/en/solutions/acp" target="_blank" rel="noopener noreferrer">QueryPie ACP</a><a class="product-chip" href="https://goteleport.com/docs/" target="_blank" rel="noopener noreferrer">Teleport</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>SIEM</h3><p>보안 로그 수집, 상관분석, 탐지</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.datadoghq.com/product/cloud-siem/" target="_blank" rel="noopener noreferrer">Datadog Cloud SIEM</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>CSPM</h3><p>클라우드 설정 오류와 위험 탐지</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.datadoghq.com/product/cloud-security/" target="_blank" rel="noopener noreferrer">Datadog Cloud Security</a><a class="product-chip" href="https://www.wiz.io/platform/wiz-cloud" target="_blank" rel="noopener noreferrer">Wiz</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>리소스 인벤토리</h3><p>클라우드·호스트·컨테이너 자산 가시성</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.datadoghq.com/product/infrastructure-monitoring/" target="_blank" rel="noopener noreferrer">Datadog Infrastructure Monitoring</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>인증·인가 관리</h3><p>SSO, 계정 수명주기, 권한 기준</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.okta.com/products/workforce-identity/" target="_blank" rel="noopener noreferrer">Okta</a><a class="product-chip" href="https://www.keycloak.org/" target="_blank" rel="noopener noreferrer">Keycloak (OSS)</a><a class="product-chip" href="https://www.microsoft.com/en-us/security/business/microsoft-entra" target="_blank" rel="noopener noreferrer">Microsoft Entra ID</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>취약점 스캔/코드 보안</h3><p>코드, 이미지, 런타임 위험과 조치 추적</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.datadoghq.com/product/code-security/" target="_blank" rel="noopener noreferrer">Datadog Code Security</a><a class="product-chip" href="https://www.wiz.io/platform/wiz-cloud" target="_blank" rel="noopener noreferrer">Wiz</a><a class="product-chip" href="https://www.sonarsource.com/products/sonarqube/" target="_blank" rel="noopener noreferrer">SonarQube</a><a class="product-chip" href="https://github.com/security/advanced-security" target="_blank" rel="noopener noreferrer">GitHub Advanced Security</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>엔드포인트 DLP</h3><p>단말의 개인정보 반출 통제</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.somansa.com/" target="_blank" rel="noopener noreferrer">Privacy-i</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>Google Workspace DLP</h3><p>문서와 협업 공간의 민감정보 통제</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://netkiller.com/" target="_blank" rel="noopener noreferrer">Netkiller ISMS</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>SASE/SSE</h3><p>원격근무와 SaaS 접근 경로 통제</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.zscaler.com/products-and-solutions/zero-trust-exchange-zte" target="_blank" rel="noopener noreferrer">Zscaler</a><a class="product-chip" href="https://www.paloaltonetworks.com/sase" target="_blank" rel="noopener noreferrer">Prisma SASE</a><a class="product-chip" href="https://www.cloudflare.com/sase/" target="_blank" rel="noopener noreferrer">Cloudflare One</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>EDR</h3><p>업무 단말 위협 탐지와 대응</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.trendmicro.com/en_us/business/products/endpoint-security.html" target="_blank" rel="noopener noreferrer">Trend Micro Apex One</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>MDM</h3><p>단말 등록, 보안 정책, 분실 대응</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://jumpcloud.com/" target="_blank" rel="noopener noreferrer">JumpCloud</a><a class="product-chip" href="https://www.microsoft.com/en-us/security/business/microsoft-intune" target="_blank" rel="noopener noreferrer">Microsoft Intune</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>배포관리</h3><p>CI/CD 변경 이력과 배포 품질</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.datadoghq.com/product/ci-cd-monitoring/" target="_blank" rel="noopener noreferrer">Datadog CI Visibility</a></div>
+          </article>
+          <article class="solution-item">
+            <div><h3>서비스 모니터링</h3><p>장애, 성능, 사용자 영향 추적</p></div>
+            <div class="product-chips"><a class="product-chip" href="https://www.datadoghq.com/product/apm/" target="_blank" rel="noopener noreferrer">Datadog APM</a></div>
+          </article>
+        </div>
+
+        <div class="solution-cta" aria-labelledby="datadog-cta-title">
+          <p class="eyebrow">all-in-one 모니터링</p>
+          <h2 id="datadog-cta-title">Datadog은 모니터링과 보안 운영 가시성을 한 플랫폼에서 연결합니다.</h2>
+          <p>APM, Infrastructure Monitoring, Log Management, Cloud SIEM, Cloud Security, CI Visibility를 같은 운영 화면에서 볼 수 있어 클라우드 네이티브 조직의 증적 운영 출발점으로 쓰기 좋습니다.</p>
+          <div class="card-actions">
+            <a class="button primary" href="datadog.html">Datadog 별도 페이지 보기 <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Cloud Native ISMS-P Guide</span>
+      <span>문서 기준일: 2026-07-08 · 소개용 자료</span>
+    </div>
+  </footer>
+</body>
+</html>

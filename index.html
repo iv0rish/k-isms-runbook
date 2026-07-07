@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Native ISMS-P Guide</title>
+  <meta name="description" content="클라우드 네이티브 환경에서 ISMS-P 준비 범위, P0 증적 공백, 솔루션 맵, Datadog 운영 가시성을 설명하는 소개 페이지">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar" aria-label="상단 내비게이션">
+      <a class="brand" href="index.html" aria-label="Cloud Native ISMS-P Guide 홈">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Cloud Native ISMS-P Guide</span>
+      </a>
+      <nav class="nav" aria-label="주요 페이지">
+        <a href="index.html" aria-current="page">소개</a>
+        <a href="readiness.html">준비 기준</a>
+        <a href="solutions.html">솔루션 맵</a>
+        <a href="datadog.html">Datadog</a>
+        <a href="roadmap.html">실행 로드맵</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero" aria-labelledby="home-title">
+      <div class="container hero-stage">
+        <div class="hero-copy">
+          <p class="kicker">문서 기준일 2026-07-08</p>
+          <h1 id="home-title">Cloud Native ISMS-P Guide</h1>
+          <p class="hero-lede">
+            AWS, EKS/ECS, CI/CD, SaaS, 개인정보 처리 시스템을 운영하는 조직이 ISMS-P 심사 전에 먼저 정리해야 할 범위와 증적 공백을 설명합니다.
+          </p>
+          <div class="hero-actions" aria-label="주요 이동">
+            <a class="button primary" href="readiness.html">준비 기준 보기 <span class="arrow">→</span></a>
+            <a class="button secondary" href="datadog.html">Datadog all-in-one 모니터링 보기 <span class="arrow">→</span></a>
+          </div>
+          <div class="hero-tags" aria-label="핵심 키워드">
+            <span>Cloud Native</span>
+            <span>AWS</span>
+            <span>ISMS-P</span>
+            <span>SaaS</span>
+            <span>증적 자동화</span>
+            <span>개인정보 흐름</span>
+          </div>
+        </div>
+
+        <div class="console-scene" aria-hidden="true">
+          <div class="console-window primary">
+            <div class="window-head">
+              <span>evidence-flow / cloud-native-scope</span>
+              <span class="window-dots"><span></span><span></span><span></span></span>
+            </div>
+            <div class="flow-board">
+              <div class="flow-card">
+                <strong>AWS Control Plane</strong>
+                <small>Org · IAM · Config · Trail</small>
+              </div>
+              <div class="flow-card">
+                <strong>EKS / ECS Workloads</strong>
+                <small>Audit · 애플리케이션 로그 · Secrets</small>
+              </div>
+              <div class="flow-card">
+                <strong>SaaS / CI/CD</strong>
+                <small>SSO · 배포 · 승인</small>
+              </div>
+              <span class="pulse-line"></span>
+            </div>
+          </div>
+          <div class="console-window side">
+            <div class="window-head">
+              <span>P0 심사 신호</span>
+              <span>2026-07-08</span>
+            </div>
+            <div class="audit-list">
+              <div class="audit-row"><span>access</span><span>퇴사자 권한</span><b class="status risk">gap</b></div>
+              <div class="audit-row"><span>logs</span><span>WORM 보관</span><b class="status warn">hold</b></div>
+              <div class="audit-row"><span>privacy</span><span>흐름도 매핑</span><b class="status">ok</b></div>
+              <div class="audit-row"><span>vuln</span><span>조치 티켓</span><b class="status warn">open</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="note-band section-compact" aria-labelledby="start-title">
+      <div class="container">
+        <div class="note-panel">
+          <div>
+            <p class="eyebrow">먼저 볼 것</p>
+            <strong id="start-title">첫 단계는 도구 구매가 아니라 인증범위와 증적 공백을 고정하는 일입니다.</strong>
+            <p>범위가 흔들리면 접근통제, 로그, 취약점, 개인정보 처리 증적도 같이 흔들립니다. 심사 대상 시스템과 P0 공백을 먼저 고정한 뒤 필요한 솔루션을 고르는 편이 안전합니다.</p>
+          </div>
+          <div class="chip-grid" aria-label="첫 점검 항목">
+            <span class="chip">인증범위</span>
+            <span class="chip">자산 목록</span>
+            <span class="chip">접근권한</span>
+            <span class="chip">로그 보존</span>
+            <span class="chip">개인정보 흐름</span>
+            <span class="chip">조치 이력</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="gateway-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">페이지 구성</p>
+            <h2 id="gateway-title">필요한 주제부터 나누어 봅니다.</h2>
+          </div>
+          <p class="section-copy">
+            한 페이지에 모두 담지 않고 준비 기준, 솔루션 맵, Datadog 운영 가시성, 실행 로드맵을 별도 페이지로 나눴습니다.
+          </p>
+        </div>
+
+        <div class="gateway-grid">
+          <a class="gateway-card" href="readiness.html">
+            <b>01</b>
+            <h3>ISMS-P 준비</h3>
+            <p>KISA ISMS-P 구조와 클라우드 네이티브 환경의 P0 리스크를 정리합니다.</p>
+            <span class="link">준비 기준 보기 →</span>
+          </a>
+          <a class="gateway-card" href="solutions.html">
+            <b>02</b>
+            <h3>솔루션 맵</h3>
+            <p>접근제어, SIEM, CSPM, SASE, EDR, MDM, 코드 보안 제품을 범주별로 봅니다.</p>
+            <span class="link">제품 범주 보기 →</span>
+          </a>
+          <a class="gateway-card" href="datadog.html">
+            <b>03</b>
+            <h3>Datadog</h3>
+            <p>인프라, 애플리케이션, 로그, 보안, CI/CD를 한 플랫폼에서 연결하는 방식을 설명합니다.</p>
+            <span class="link">all-in-one 모니터링 보기 →</span>
+          </a>
+          <a class="gateway-card" href="roadmap.html">
+            <b>04</b>
+            <h3>실행 로드맵</h3>
+            <p>AWS 기본 통제, Evidence Lake, SIEM/GRC/티켓 흐름과 단계별 실행 순서를 설명합니다.</p>
+            <span class="link">로드맵 보기 →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="home-final-title">
+      <div class="container cta-panel">
+        <div>
+          <p class="eyebrow">다음 단계</p>
+          <h2 id="home-final-title">P0 증적 공백을 먼저 보면 필요한 솔루션이 선명해집니다.</h2>
+          <p>ISMS-P를 처음 준비하는 조직도 범위, 권한, 로그, 개인정보 흐름부터 차례로 확인할 수 있게 구성했습니다.</p>
+        </div>
+        <a class="button primary" href="readiness.html">P0 리스크 확인 <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Cloud Native ISMS-P Guide</span>
+      <span>문서 기준일: 2026-07-08 · 소개용 자료</span>
+    </div>
+  </footer>
+</body>
+</html>
